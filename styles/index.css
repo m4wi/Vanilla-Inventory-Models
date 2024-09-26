@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  background:#09090b;
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+button {
+  border: 1px solid #fafafa;
+  background-color: #fafafa;
+  color: #09090b;
+  border-radius: 4px;
+  padding: 6px 8px ;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+#graph {
+  height: 90%;
+  width: 100%;
+  border: none;
+  background-color: #09090b;
+}
+
+a {
+  text-decoration: none;
+  color: #09090b;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+li {
+  border: 1px solid #fafafa;
+  background-color: #fafafa;
+  border-radius: 4px;
+  padding: 4px 8px ;
+}
+nav ul {
+  list-style-type: none; /* Quita los puntos de la lista */
+  padding: 0; /* Elimina el padding predeterminado */
+  margin: 0; /* Elimina el margen predeterminado */
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  text-align: center;
+  align-items: center;
+  padding: 4px 8px;
+  margin: 8px;
+}
+.app-header {
+  width: 100%;
+  height: 6vh;
+  display: flex; /* Habilita Flexbox */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  padding: 8px;
+}
+
+.line {
+  height: 1px;
+  background-color: #27272a;
+  margin: 0px 8px;
+}
+
+.cpm-instructions {
+  line-height: 1.6;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #27272a;
+  border-radius: 6px;
+  color: rgb(200, 200, 200);
+  font-size: 1em;
+}
+
+.cpm-instructions h3 {
+  color: #fafafa;
+}
+
+.cpm-instructions p {
+  margin: 10px 0;
+  font-size: 0.7em;
+}
+.tb-input-data {
+  border: none !important;
+  width: 50%;
+}
+
+input[type="number"] , input[type="text"] {
+  padding: 2px;
+  border: 1px solid #27272a;
+  border-radius: 4px;
+  font-size: 0.8em;
+  background-color: #09090b;
+  color: #fafafa;
+  text-align: center;
+}
+
+.node-input-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px; /* Espacio entre los elementos */
+  margin: 8px auto; /* Centrando el contenedor */
+  padding: 4px;
+  text-align: center;
+  align-items: center;
+}
+
+label {
+  font-weight: bold; /* Negrita para la etiqueta */
+  font-size: 0.8em;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Eliminar la apariencia por defecto */
+    margin: 0; /* Eliminar margen */
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Cambiar la apariencia a texto para Firefox */
+}
+
+.tableForm {
+  display: none;
+}
+
+.page-sections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
+  grid-template-rows: minmax(100px, auto);
+  flex: 1;
+  gap: 0px; /* Espacio entre elementos */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.section1 {
+  grid-column: 1;
+  overflow: auto;
+}
+
+.section2 {
+  grid-column: 1;
+  overflow: auto;
+}
+
+.section3 {
+  grid-column: 2;
+  grid-row: span 2;
+  overflow: auto;
+  padding: 8px;
+}
+
+.app-footer {
+  width: 100%;
+  padding: 4px 0;
+  background-color: #09090b; /* Color de fondo */
+  color: #fafafa; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-text {
+  font-size: 0.8em;
+  margin: 5px;
+  align-self: center;
+  justify-content: center;
+}
+
+table {
+  margin: 6px auto; /* Centra la tabla horizontalmente */
+  border-collapse: collapse;
+  font-size: 0.8em;
+}
+
+  /* Estilo para la cabecera de la tabla */
+th {
+  color: #fafafa;
+  padding: 1px;
+  text-align: center; /* Centra el texto en los encabezados */
+  border-bottom: 1px solid #27272a;
+  padding: 2px 4px;
+}
+
+  /* Estilo para las celdas del cuerpo de la tabla */
+td {
+  text-align: center; /* Centra el texto en las celdas */
+  border-bottom: 1px solid #27272a;
+  padding: 2px;
+}
+
+textarea {
+  background-color: #09090b;
+  color: #fafafa;
+  border: 1px solid #27272a;
+  border-radius: 4px;
+  padding: 8px;
+}
+.solve-container {
+  width: 100%;
+  padding: 8px 0px;
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+.model-result {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+.solve-data{
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  margin: 4px;
+}
+.float-button {
+  position: absolute;
+}

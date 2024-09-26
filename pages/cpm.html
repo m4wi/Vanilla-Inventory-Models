@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="../assets/defautl_icon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/index.css">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="app-header">
+    <ul>
+      <li><a href="cpm.html">Cpm</a></li>
+      <li><a href="pert.html">Pert</a></li>
+      <li><a href="inventory.html">Inventario</a></li>
+    </ul>
+  </nav>
+  <div class="line"></div>
+  <section class="cpm-instructions">
+    <h3>CPM Calculator Instructions</h3>
+    <p>Please enter the predecessors for each activity in uppercase letters, separated by spaces.</p>
+    <p>For the duration of the activity, only positive values are allowed. You may enter decimals using a period.</p>
+    <p>If you wish to indicate that an activity has "Start" as a predecessor, insert a "-" character.</p>
+  </section>
+  <div class="page-sections">
+    <section class="cpm-instructions section1">
+      <div class="node-input-container">
+        <label for="nodeNumber">Enter the number of nodes:</label>
+        <input type="number" name="cantidadnodos" id="nodeNumber" placeholder="Enter a number" min="1" required>
+        <button id="generate-button">Generate</button>
+      </div>
+      <div class="tableForm" id="tableForm">
+        <table>
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Activity</th>
+                  <th>Predecessor</th>
+                  <th>Time</th>
+              </tr>
+          </thead>
+          <tbody id="data-table-body">
+          </tbody>
+      </table>
+      <button id="read-button">Apply Model</button>
+      </div>
+    </section>
+    <section class="cpm-instructions section3">
+      <button id="printGraph" class="float-button">Generate Graph</button>
+      <div class="graph-section" id="graph"></div>
+    </section>  
+    <section class="cpm-instructions section2">
+      <div class="solve-container" id="solve-container">
+        <table>
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Activity</th>
+                  <th>Predecessor</th>
+                  <th>Succesors</th>
+                  <th>Time</th>
+                  <th>Slack</th>
+                  <th>Start Early</th>
+                  <th>Start Late</th>
+                  <th>End Early</th>
+                  <th>End Late</th>
+              </tr>
+          </thead>
+          <tbody id="solve-data-table-body">
+          </tbody>
+        </table>
+      <div class="model-result">
+        <div class="solve-data">
+          <label for="critical-route">Critical Route: </label>
+          <textarea type="text" readOnly="readonly" name="critical-route" id="critical-route"></textarea>
+        </div>
+        <div class="solve-data">
+          <label for="critical-time">Critical Time: </label>
+          <span id="critical-time" name="critical-time"></span>
+        </div>
+      </div>
+      </div>
+    </section>
+  </div>
+  <footer class="app-footer">
+    <div class="line"></div>
+    <div class="footer-text">
+      <p>&copy; 2024 m4wi. All rights reserved.</p>
+    </div>
+  </footer>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script type="module" src="../functions/cpm.js"></script>
+</body>
+</html>
