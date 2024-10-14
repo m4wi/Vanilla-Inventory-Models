@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="../assets/defautl_icon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/descicion1.css">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="app-header">
+    <ul>
+      <li><a href="cpm.html">Cpm</a></li>
+      <li><a href="pert.html">Pert</a></li>
+      <li><a href="inventory.html">Inventario</a></li>
+      <li><a href="descicion1.html">TD Certidumbre</a></li>
+      <li><a href="descicion2.html">TD Incertidumbre</a></li>
+    </ul>
+  </nav>
+  <div class="line"></div>
+  <div class="page-sections">
+    <section class="cpm-instructions section1">
+      <div class="options-descicion">
+        <div>
+          <div class="node-input-container">
+            <label for="nodeNumber">Numero de criterios:</label>
+            <input type="number" name="cantidadnodos" id="ncriterios" placeholder="Enter a number" min="1" required>
+          </div>
+          <div class="node-input-container">
+            <label for="nodeNumber">Numero de opciones:</label>
+            <input type="number" name="cantidadnodos" id="nopciones" placeholder="Enter a number" min="1" required>
+          </div>
+        </div>
+        <button id="generate-button">Generate</button>
+      </div>
+    </section>
+    <section class="cpm-instructions section3">
+      <div class="div4 col-span-3 row-span-3 bg-white bg-opacity-10 shadow-lg rounded-lg p-4">
+        <!--<p class="text-lg text-gray-700 font-serif">Cuadro Opcional:</p>
+        <div id="matriz-container"></div>-->
+        <br>
+        <p class="text-lg text-gray-700 font-serif">Ponderación de criterios(importante)*:</p>
+        <br>
+        <div id="matriz-container-adicional"></div>
+        <!--<button id="guardarMatriz">resolver</button>-->
+        <br>
+        <button class="bg-white hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" id="guardarMatriz">
+            2.Resolver
+          </button>
+          <br>
+          <p class="text-lg text-gray-700 font-serif">Representatividad de cada criterio:</p>
+        <div id="resolucion-matriz-container"></div>
+      </div>
+    </section>  
+    <section class="cpm-instructions section2">
+      <div class="div3 col-span-3 row-span-3 bg-white bg-opacity-10 shadow-lg rounded-lg p-4"> 
+        <p class="text-lg text-gray-700 font-serif" >Alternativas:</p>
+        <button class="bg-white hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" id="alternativas">3.generar alternativas</button>
+        <br>
+        <div id="matriz-container-demasopciones"></div>
+        <div id="contenedor-dinamico" class=""></div>
+        <br>
+        <button class="bg-white hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" id="guardarAlternativas">4.Guardar Alternativas</button>
+        <br>
+    </section>
+    <section class="cpm-instructions section4">
+      <div class="div5 col-span-3 row-span-3 bg-white bg-opacity-10 shadow-lg rounded-lg p-4"> 
+        <br>
+        <button class="bg-white hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" id="resolverAlternativas">5.resolver Alternativas
+
+        </button>
+        <br>
+        <div id="resolucionDeAlternativas">
+            <div id="resolucionDeAlternativas1"></div>
+            <div id="resolucionDeAlternativas2"></div>
+        </div>
+        
+
+      </div>
+    </section>
+  </div>
+  <footer class="app-footer">
+    <div class="line"></div>
+    <div class="footer-text">
+      <p>&copy; 2024 m4wi. All rights reserved.</p>
+    </div>
+  </footer>
+  <script type="module" src="../functions/descicion1.js"></script>
+</body>
+</html>

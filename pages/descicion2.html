@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="../assets/defautl_icon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/descicion2.css">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="app-header">
+    <ul>
+      <li><a href="cpm.html">Cpm</a></li>
+      <li><a href="pert.html">Pert</a></li>
+      <li><a href="inventory.html">Inventario</a></li>
+      <li><a href="descicion1.html">TD Certidumbre</a></li> 
+      <li><a href="descicion2.html">TD Incertidumbre</a></li>
+    </ul>
+  </nav>
+  <div class="line"></div>
+  <div class="page-sections">
+    <section class="cpm-instructions section1">
+      <div class="options-descicion">
+        <div>
+          <div class="node-input-container">
+            <label for="nodeNumber">Numero de desciciones:</label>
+            <input type="number" name="cantidadnodos" id="ndesciciones" placeholder="Enter a number" min="1" required>
+          </div>
+          <div class="node-input-container">
+            <label for="nodeNumber">Numero de estados:</label>
+            <input type="number" name="cantidadnodos" id="nestados" placeholder="Enter a number" min="1" required>
+          </div>
+        </div>
+        <button id="generate-button">Generate</button>
+      </div>
+      <div id="table-container"></div>
+      <div id="displayAlpha">
+        <label for="hurwicks">Valor de alfa: </label>
+        <input type="number" name="hurwicks" id="alfa">
+        <button id="calAlfa">Calcular</button>
+      </div>
+      <div>
+        <p id="result_quest"></p>
+      </div>
+        <div class="options-pos">
+          <div class="array-options">
+            <button class="opt-button" id="optimista">Optimista</button>
+            <button class="opt-button" id="pesimista">Pesimista</button>
+            <button class="opt-button" id="hurwicks">Hurwicks</button>
+            <button class="opt-button" id="laplace">Laplace</button>
+            <button class="opt-button" id="savage">Savage</button>
+          </div>
+        </div>
+    </section>
+  </div>
+  <footer class="app-footer">
+    <div class="line"></div>
+    <div class="footer-text">
+      <p>&copy; 2024 m4wi. All rights reserved.</p>
+    </div>
+  </footer>
+  <script type="module" src="../functions/descicion2.js"></script>
+</body>
+</html>

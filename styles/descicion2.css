@@ -110,6 +110,7 @@ input[type="number"] , input[type="text"] {
   padding: 4px;
   text-align: center;
   align-items: center;
+  color: #fafafa;
 }
 
 label {
@@ -131,9 +132,8 @@ input[type="number"] {
 }
 
 .page-sections {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
-  grid-template-rows: minmax(100px, auto);
+  display: flex;
+  width: 100%;
   flex: 1;
   gap: 0px; /* Espacio entre elementos */
   box-sizing: border-box;
@@ -141,20 +141,8 @@ input[type="number"] {
 }
 
 .section1 {
-  grid-column: 1;
+  width: 100%;
   overflow: auto;
-}
-
-.section2 {
-  grid-column: 1;
-  overflow: auto;
-}
-
-.section3 {
-  grid-column: 2;
-  grid-row: span 2;
-  overflow: auto;
-  padding: 8px;
 }
 
 .app-footer {
@@ -225,20 +213,27 @@ textarea {
   position: absolute;
 }
 
-.inicio {
-  flex: 1;
+.array-options {
   display: flex;
-  gap: 20px;
-  padding: 20px;
+  gap: 5px;
+  
 }
-.inicoPage {
-  padding: 20px;
+.options-pos {
+  position: absolute;
+  top: 90%;
+  left: 1.5%;
 }
-.inicio-text{
-  background-color: #09090b;
-  border: none;
+.options-descicion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-img {
-  width: 400px;
-  height: 350px;
+
+.opt-button {
+  height: 25px;
+}
+
+#displayAlpha {
+  display: none;
 }

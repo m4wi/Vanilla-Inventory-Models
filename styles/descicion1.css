@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 html, body{
@@ -133,7 +134,7 @@ input[type="number"] {
 .page-sections {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
-  grid-template-rows: minmax(100px, auto);
+  grid-template-rows: repeat(2, 1fr);
   flex: 1;
   gap: 0px; /* Espacio entre elementos */
   box-sizing: border-box;
@@ -152,11 +153,12 @@ input[type="number"] {
 
 .section3 {
   grid-column: 2;
-  grid-row: span 2;
   overflow: auto;
-  padding: 8px;
 }
-
+.section4 {
+  grid-column: 2;
+  overflow: auto;
+}
 .app-footer {
   width: 100%;
   padding: 4px 0;
@@ -225,20 +227,13 @@ textarea {
   position: absolute;
 }
 
-.inicio {
-  flex: 1;
+.options-descicion {
   display: flex;
-  gap: 20px;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-.inicoPage {
-  padding: 20px;
-}
-.inicio-text{
-  background-color: #09090b;
-  border: none;
-}
-img {
-  width: 400px;
-  height: 350px;
+
+#generate-button {
+  height: 25px;
 }
