@@ -22,7 +22,12 @@ button {
   padding: 6px 8px ;
 }
 
-
+select {
+  background-color: #09090b;
+  color: #fafafa;
+  border-radius: 4px;
+  padding: 4px;
+}
 
 #graph {
   height: 90%;
@@ -67,7 +72,7 @@ nav ul {
 .line {
   height: 1px;
   background-color: #27272a;
-  margin: 0px 8px;
+  margin: 0px 10px;
 }
 
 .cpm-instructions {
@@ -132,7 +137,7 @@ input[type="number"] {
 
 .page-sections {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
+  grid-template-columns: 1fr 4fr; /* Dos columnas de igual ancho */
   grid-template-rows: minmax(100px, auto);
   flex: 1;
   gap: 0px; /* Espacio entre elementos */
@@ -260,4 +265,13 @@ textarea {
 .solve-model {
   margin-left: 12px;
   padding: 8px;
+}
+
+#sidebar {
+  padding: 10px 2px;
+}
+
+#miCanvas {
+  height: 100%;
+  width: 100%;
 }

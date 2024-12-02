@@ -29,16 +29,11 @@
   <div class="page-sections">
     <!-- Some structures -->
      <section class="cpm-instructions">
-      <select name="model" id="model">
-        <option value="EOQmodel">EOQ Clasico</option>
-        <option value="eoqBackOrder">EOQ con Faltantes Planeados</option>
-        <option value="ProbabilisticReorderPoint">Punto de reorden probabilistica</option>
-      </select>
       <div class="input-wrapper">
         <div class="form-header">
             <h3>Input Parameters</h3>
         </div>
-        <div class="form-body" id="inventoryForm">
+        <div class="form-body">
           <div class="form-item">
             <label for="currentDemand">Current Demand: </label>
             <input type="number" name="currentDemand" id="currentDemand">
@@ -85,7 +80,6 @@
       <p>&copy; 2024 m4wi. All rights reserved.</p>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.1/jstat.min.js"></script>
   <script type="module" src="../functions/inventario.js"></script>
 </body>
 </html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="../assets/defautl_icon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/arbol.css">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="app-header">
+    <ul>
+      <li><a href="cpm.html">Cpm</a></li>
+      <li><a href="pert.html">Pert</a></li>
+      <li><a href="inventory.html">Inventario</a></li>
+      <li><a href="descicion1.html">TD Certidumbre</a></li>
+      <li><a href="descicion2.html">TD Incertidumbre</a></li>
+      <li><a href="descicion3.html">Arbol Descicion</a></li>
+      <li><a href="colas.html">Teoria colas</a></li>
+      <li><a href="dinamica.html">Programacion Dinamica</a></li>
+    </ul>
+  </nav>
+  <div class="line"></div>
+  <div class="page-sections">
+    <section class="cpm-instructions">
+      <h1 id="titulo">Árbol de deciciones</h1>
+      <div class="line"></div>
+      <main>
+        <div id="sidebar">
+          <label for="opciones">Selecciona una opción:</label>
+          <select id="opciones" name="opciones">
+            <option value="costo">Costo</option>
+            <option value="ganancia">Ganancia</option>
+          </select>
+          <section class="acciones">
+            <p>Nodo Seleccionado:</p>
+            <input type="number" value="1" id="numeroRamas" readonly
+              style="font-size: 14px; height: 30px; width: 60px; text-align: center; padding-left: 0px; font-weight: 700;" />
+            <button onclick="aumentar()">
+               + 
+            </button>
+            <button onclick="disminuir()">
+               -
+            </button>
+            <br /><br>
+            <button onclick="añadirRama()">Añadir rama</button>
+            <br><br>
+            <button onclick="calcular()">Calcular</button>
+            <br><br>
+            <label for="campo">Resultado :</label>
+            <br>
+            <p id="respuesta">-</p>
+          </section>
+      </main>
+    </section>
+    <section class="cpm-instructions">
+      <div id="content-container">
+        <canvas id="miCanvas" height="800px" width="1200px"></canvas>
+      </div>
+    </section>
+  </div>
+  <footer class="app-footer">
+    <div class="line"></div>
+    <div class="footer-text">
+      <p>&copy; 2024 m4wi. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../functions/arbol.js"></script>
+</body>
+</html>
