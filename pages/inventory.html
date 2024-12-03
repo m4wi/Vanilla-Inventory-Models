@@ -30,9 +30,15 @@
     <!-- Some structures -->
      <section class="cpm-instructions">
       <select name="model" id="model">
-        <option value="EOQmodel">EOQ Clasico</option>
+        <option value="eoqClassic">EOQ Clásico</option>
+        <option value="eoqProductionLot">EOQ Lote de Producción</option>
         <option value="eoqBackOrder">EOQ con Faltantes Planeados</option>
-        <option value="ProbabilisticReorderPoint">Punto de reorden probabilistica</option>
+        <option value="eoqQuantityDiscount">EOQ Descuentos por Cantidad</option>
+        <option value="eoqSinglePeriod">EOQ Periodo Único, Demanda Probabilística</option>
+        <option value="probabilisticReorderPoint">EOQ Cantidad de Pedido, Reorden, Demanda Probabilística</option>
+        <option value="eoqPeriodicReview">EOQ Revisión Periódica, Demanda Probabilística</option>
+        <option value="eoqDontLostSales">EOQ demanda, tiempo probabilistico, sin ventas perdidas</option>
+        <option value="eoqLostSales">EOQ demanda, tiempo probabilistico, con ventas perdidas</option>
       </select>
       <div class="input-wrapper">
         <div class="form-header">

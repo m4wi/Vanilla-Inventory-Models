@@ -29,35 +29,27 @@
   <div class="page-sections">
     <!-- Some structures -->
      <section class="cpm-instructions">
+      <select name="model" id="model">
+        <option value="modeloMM1">Modelo de Línea de Espera M/M/1</option>
+        <option value="modeloMMK">Modelo de Línea de Espera M/M/k</option>
+        <!--<option value="teoremaLittle">Teorema de Little</option>-->
+        <option value="modeloMG1">Modelo de Línea de Espera M/G/1</option>
+        <option value="modeloMGKsinEspera">Modelo M/G/k sin espera</option>
+        <option value="modeloFuenteFinita">Modelo con Fuente Finita</option>        
+      </select>
       <div class="input-wrapper">
         <div class="form-header">
             <h3>Input Parameters</h3>
         </div>
-        <div class="form-body">
+        <div class="form-body" id="inventoryForm">
           <div class="form-item">
-            <label for="currentDemand">Current Demand: </label>
-            <input type="number" name="currentDemand" id="currentDemand">
-          </div>
-          <div class="form-item">
-            <label for="orderingCost">Ordering Cost: </label>
-            <input type="number" name="orderingCost" id="orderingCost">
-          </div>
-          <div class="form-item">
-            <label for="holdingCostRate">Holding Cost Rate: </label>
-            <input type="number" name="holdingCostRate" id="holdingCostRate">
-          </div>
-          <div class="form-item">
-            <label for="unitCost">Unit Cost</label>
-            <input type="number" name="unitCost" id="unitCost">
-          </div>
-          <div class="form-item">
-            <label for="workingDaysPerYear">Working Days</label>
-            <input type="number" name="workingDaysPerYear" id="workingDaysPerYear">
-          </div>
-          <div class="form-item">
-            <label for="leadTime">Lead Time</label>
-            <input type="number" name="leadTime" id="leadTime">
-          </div>
+            <label for="arrivalRate">Arrival Rate (λ): </label>
+            <input type="number" name="arrivalRate" id="arrivalRate">
+        </div>
+        <div class="form-item">
+            <label for="serviceRate">Service Rate (μ): </label>
+            <input type="number" name="serviceRate" id="serviceRate">
+        </div>
         </div>
         <div type="form-footer">
           <button id="applyModel">Apply Model</button>
@@ -80,6 +72,7 @@
       <p>&copy; 2024 m4wi. All rights reserved.</p>
     </div>
   </footer>
-  <script type="module" src="../functions/inventario.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.1/jstat.min.js"></script>
+  <script type="module" src="../functions/colas.js"></script>
 </body>
 </html>
