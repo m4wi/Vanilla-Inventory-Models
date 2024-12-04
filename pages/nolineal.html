@@ -24,20 +24,15 @@
   </nav>
   <div class="line"></div>
   <section class="cpm-instructions">
-    <h3>Queueing Theory</h3>
-    <p>Queueing Theory studies the behavior of waiting lines, helping to analyze and optimize systems where resources are limited. It is commonly used in areas like telecommunications, customer service, and manufacturing to improve efficiency and reduce waiting times. By modeling arrival rates, service rates, and queue lengths, it helps organizations manage their resources effectively and enhance overall service delivery.</p>
+    <h3>Nonlinear Programming (NLP) Model</h3>
+    <p>The Nonlinear Programming (NLP) model optimizes problems where the objective function or constraints are nonlinear. It is widely used in various fields, such as economics and engineering, to find optimal solutions in complex scenarios where linear models do not apply.</p>
   </section>
-  
   <div class="page-sections">
     <!-- Some structures -->
      <section class="cpm-instructions">
       <select name="model" id="model">
-        <option value="modeloMM1">Modelo de Línea de Espera M/M/1</option>
-        <option value="modeloMMK">Modelo de Línea de Espera M/M/k</option>
-        <!--<option value="teoremaLittle">Teorema de Little</option>-->
-        <option value="modeloMG1">Modelo de Línea de Espera M/G/1</option>
-        <option value="modeloMGKsinEspera">Modelo M/G/k sin espera</option>
-        <option value="modeloFuenteFinita">Modelo con Fuente Finita</option>        
+        <option value="bisection">Bisection</option>
+        <option value="newtonRaphson">Newton Raphson</option>          
       </select>
       <div class="input-wrapper">
         <div class="form-header">
@@ -45,12 +40,16 @@
         </div>
         <div class="form-body" id="inventoryForm">
           <div class="form-item">
-            <label for="arrivalRate">Arrival Rate (λ): </label>
-            <input type="number" name="arrivalRate" id="arrivalRate">
+            <label for="coefficients">Vector de coeficientes: </label>
+            <input type="text" name="coefficients" id="coefficients">
         </div>
         <div class="form-item">
-            <label for="serviceRate">Service Rate (μ): </label>
-            <input type="number" name="serviceRate" id="serviceRate">
+            <label for="searchInterval">Intervalo de búsqueda: </label>
+            <input type="text" name="searchInterval" id="searchInterval">
+        </div>
+        <div class="form-item">
+            <label for="errorTolerance">Error Permisible: </label>
+            <input type="number" name="errorTolerance" id="errorTolerance">
         </div>
         </div>
         <div type="form-footer">
@@ -58,7 +57,6 @@
         </div>
       </div>
      </section>
-
      <section class="cpm-instructions">
       <div class="solution-wrapper" id="solution-wrapper">
         <h3>Solution to the Model</h3>
@@ -74,7 +72,6 @@
       <p>&copy; 2024 m4wi. All rights reserved.</p>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.1/jstat.min.js"></script>
-  <script type="module" src="../functions/colas.js"></script>
+  <script type="module" src="../functions/nolineal.js"></script>
 </body>
 </html>

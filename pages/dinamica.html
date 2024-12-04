@@ -19,44 +19,39 @@
       <li><a href="descicion3.html">Arbol Descicion</a></li>
       <li><a href="colas.html">Teoria colas</a></li>
       <li><a href="dinamica.html">Programacion Dinamica</a></li>
+      <li><a href="nolineal.html">Programacion no Lineal</a></li>
     </ul>
   </nav>
   <div class="line"></div>
   <section class="cpm-instructions">
-    <h3>Economic Order Quantity (EOQ) Model</h3>
-    <p>The Economic Order Quantity (EOQ) model calculates the optimal inventory level a company should order to minimize storage and ordering costs. By finding the balance between demand, ordering costs, and carrying costs, it optimizes the efficiency of inventory management. This approach helps businesses reduce excess stock while ensuring they have enough inventory to meet customer needs, ultimately leading to improved cash flow and operational efficiency.</p>
+    <h3>Dynamic Programming (DP) Model</h3>
+    <p>Dynamic Programming (DP) is a method used to solve complex problems by breaking them down into simpler subproblems. It is particularly useful in optimization, where problems can be divided into overlapping subproblems with optimal substructure. DP is widely applied in fields like resource allocation, shortest path problems, and inventory management to find efficient solutions by solving smaller, manageable pieces.</p>
   </section>
+  
   <div class="page-sections">
     <!-- Some structures -->
      <section class="cpm-instructions">
+      <select name="model" id="model">
+        <option value="backpack">Mochila</option>
+      </select>
       <div class="input-wrapper">
         <div class="form-header">
             <h3>Input Parameters</h3>
         </div>
         <div class="form-body">
-          <div class="form-item">
-            <label for="currentDemand">Current Demand: </label>
-            <input type="number" name="currentDemand" id="currentDemand">
-          </div>
-          <div class="form-item">
-            <label for="orderingCost">Ordering Cost: </label>
-            <input type="number" name="orderingCost" id="orderingCost">
-          </div>
-          <div class="form-item">
-            <label for="holdingCostRate">Holding Cost Rate: </label>
-            <input type="number" name="holdingCostRate" id="holdingCostRate">
-          </div>
-          <div class="form-item">
-            <label for="unitCost">Unit Cost</label>
-            <input type="number" name="unitCost" id="unitCost">
-          </div>
-          <div class="form-item">
-            <label for="workingDaysPerYear">Working Days</label>
-            <input type="number" name="workingDaysPerYear" id="workingDaysPerYear">
-          </div>
-          <div class="form-item">
-            <label for="leadTime">Lead Time</label>
-            <input type="number" name="leadTime" id="leadTime">
+          <div class="form-body">
+            <div class="form-item">
+                <label for="vectorWeights">Pesos: </label>
+                <input type="text" name="vectorWeights" id="vectorWeights">
+            </div>
+            <div class="form-item">
+                <label for="vectorProfit">Valores: </label>
+                <input type="text" name="vectorProfit" id="vectorProfit">
+            </div>
+            <div class="form-item">
+                <label for="errorTolerance">Peso Maximo: </label>
+                <input type="number" name="maxWeight" id="maxWeight">
+            </div>
           </div>
         </div>
         <div type="form-footer">
@@ -80,6 +75,6 @@
       <p>&copy; 2024 m4wi. All rights reserved.</p>
     </div>
   </footer>
-  <script type="module" src="../functions/inventario.js"></script>
+  <script type="module" src="../functions/dinamica.js"></script>
 </body>
 </html>
