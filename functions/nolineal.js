@@ -1,4 +1,5 @@
 import { biseccion, newtonRaphson} from '../lib/binew.js'
+import { GranM } from '../lib/GranM.js'
 
 const modelInputs = {
   bisection: `
@@ -32,6 +33,25 @@ const modelInputs = {
         <input type="number" name="errorTolerance" id="errorTolerance">
     </div>
   </div>`,
+  fractional: `
+  <div class="form-body">
+      <div class="form-item">
+          <label for="numeratorCoefficients">Vector de coeficientes numerador: </label>
+          <input type="text" name="numeratorCoefficients" id="numeratorCoefficients">
+      </div>
+      <div class="form-item">
+          <label for="denominatorCoefficients">Vector de coeficientes denominador: </label>
+          <input type="text" name="denominatorCoefficients" id="denominatorCoefficients">
+      </div>
+      <div class="form-item">
+          <label for="restrictionMatrix">Matriz de coeficientes de restricciones: </label>
+          <input type="text" name="restrictionMatrix" id="restrictionMatrix">
+      </div>
+      <div class="form-item">
+          <label for="resultsVector">Vector de resultados: </label>
+          <input type="text" name="resultsVector" id="resultsVector">
+      </div>
+  </div>`
 }
 function parseStringtoNumber(vectorString) {
   // Separar la cadena por comas y convertir cada elemento en un número flotante
@@ -55,6 +75,40 @@ const modelFunctions = {
       ElPuntoBuscado : res
     }
   },
+  fractional: (data) => {
+    const coeffnumerador = parseStringtoNumber(data.numeratorCoefficients); // [2,-2,1]
+    const coeffdenominador = parseStringtoNumber(data.denominatorCoefficients); //[4,1,3];
+    const matrizRestricciones = data.restrictionMatrix.split(";").map(row => row.split(",").map(Number))
+    const vectorTerIndependientes = parseStringtoNumber(data.resultsVector);
+  
+    const eNum = coeffnumerador.shift();
+    coeffnumerador.push(eNum);
+
+    const eDen = coeffdenominador.shift();
+    coeffdenominador.push(eDen);
+
+    const nuevaMatrizRestricciones = matrizRestricciones.map((fila, index) => {
+      // Agregar el valor negativo del término independiente correspondiente a la fila
+      return [...fila, -vectorTerIndependientes[index]];
+    });
+    nuevaMatrizRestricciones.push(coeffdenominador)
+
+    const numRes = nuevaMatrizRestricciones.length;
+    const vIndependientes = Array(numRes).fill(0);
+    vIndependientes[numRes - 1] = 1;
+
+    const signs = Array(numRes).fill(-1);
+    signs[numRes - 1] = 0;
+
+    const granM = new GranM(coeffnumerador, nuevaMatrizRestricciones, vIndependientes, signs);
+    granM.initialize();
+    const result = granM.optimize();
+    const rlength = result.solution.length
+    return{
+      x1: result.solution[0]/result.solution[rlength - 1],
+      x2: result.solution[1]/result.solution[rlength - 1]
+    }
+  }
 }
 
 const handleModel = document.getElementById("applyModel");
@@ -66,11 +120,22 @@ function getInputValues() {
   const searchInterval = document.getElementById("searchInterval");
   const errorTolerance = document.getElementById("errorTolerance");
   const initialGuess = document.getElementById("initialGuess");
+  const numeratorCoefficients = document.getElementById("numeratorCoefficients");
+  const denominatorCoefficients = document.getElementById("denominatorCoefficients");
+  const restrictionMatrix = document.getElementById("restrictionMatrix");
+  const inequalitiesVector = document.getElementById("inequalitiesVector");
+  const resultsVector = document.getElementById("resultsVector");
+
   const values = {
       coefficients: coefficients ? String(coefficients.value) : null,
       searchInterval: searchInterval ? String(searchInterval.value) : null,
       errorTolerance: errorTolerance ? Number(errorTolerance.value) : null,
-      initialGuess: initialGuess ? Number(initialGuess.value) : null
+      initialGuess: initialGuess ? Number(initialGuess.value) : null,
+      numeratorCoefficients: numeratorCoefficients ? String(numeratorCoefficients.value) : null,
+      denominatorCoefficients: denominatorCoefficients ? String(denominatorCoefficients.value) : null,
+      restrictionMatrix: restrictionMatrix ? String(restrictionMatrix.value) : null,
+      inequalitiesVector: inequalitiesVector ? String(inequalitiesVector.value) : null,
+      resultsVector: resultsVector ? String(resultsVector.value) : null,
   };
 
   // Filtra los valores nulos
